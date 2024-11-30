@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    
+    {% if not user.is_authenticated %}
+        
+
+        <h1>Create Discussion</h1>
+        {% for result in displayusername %}
+                <p>{{result.username}}</p>
+                <a href="http://127.0.0.1:8000/chat/{{id}}/{{result.username}}">Discuss</a>
+        {% endfor %}
+
+    {% else %}
+
+        <button>
+            <a href='/login'>
+                Login yourself
+            </a>
+        </button>
+            
+    {% endif %}
+
+{% endblock %}
